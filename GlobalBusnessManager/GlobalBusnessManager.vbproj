@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA08F8D6-C1BA-4881-80E4-1202B4388218}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GlobalBusnessManager.My.MyApplication</StartupObject>
+    <RootNamespace>GlobalBusnessManager</RootNamespace>
+    <AssemblyName>GlobalBusnessManager</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GlobalBusnessManager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GlobalBusnessManager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="system.windows.forms.ribbon">
+      <HintPath>..\..\..\..\..\..\Program Files\system.windows.forms.ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WooCommerce.NET">
+      <HintPath>..\..\..\..\..\..\Program Files\WooCommerce.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="model\rapport\RapportModule.vb" />
+    <Compile Include="model\rapport\Rapport.vb" />
+    <Compile Include="model\rapport\RapportManager.vb" />
+    <Compile Include="model\stock\InObject.vb" />
+    <Compile Include="model\stock\OIDataGridManager.vb" />
+    <Compile Include="model\stock\OutObject.vb" />
+    <Compile Include="model\stock\Stock.vb" />
+    <Compile Include="model\storyClass\Story.vb" />
+    <Compile Include="model\storyClass\StoryManager.vb" />
+    <Compile Include="model\stock\Module.vb" />
+    <Compile Include="view\Stock_and_Story\AddInObject.Designer.vb">
+      <DependentUpon>AddInObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\Stock_and_Story\AddInObject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Stock_and_Story\AddOutObject.Designer.vb">
+      <DependentUpon>AddOutObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\Stock_and_Story\AddOutObject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\AppConfig.Designer.vb">
+      <DependentUpon>AppConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\AppConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\DataGridController.vb" />
+    <Compile Include="model\client\Client.vb" />
+    <Compile Include="model\client\ClientManager.vb" />
+    <Compile Include="model\commande\BasicCommand.vb" />
+    <Compile Include="model\commande\BasicCommandManager.vb" />
+    <Compile Include="model\commande\Command.vb" />
+    <Compile Include="model\commande\CommandManager.vb" />
+    <Compile Include="model\datagrid.manager\DataGridManager.vb" />
+    <Compile Include="model\fournisseur\Fournisseur.vb" />
+    <Compile Include="model\fournisseur\FournisseurManager.vb" />
+    <Compile Include="model\stock\DastBoad.vb" />
+    <Compile Include="view\Stock_and_Story\StockManagerView.Designer.vb">
+      <DependentUpon>StockManagerView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\Stock_and_Story\StockManagerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\AddClient.Designer.vb">
+      <DependentUpon>AddClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\AddClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\AddCommandWin.Designer.vb">
+      <DependentUpon>AddCommandWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\AddCommandWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\Connexionbeeshop.Designer.vb">
+      <DependentUpon>Connexionbeeshop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\Connexionbeeshop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="model\connexion.manager\DisableEnable.vb" />
+    <Compile Include="view\windows\Ajouter une commande.Designer.vb">
+      <DependentUpon>Ajouter une commande.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\Ajouter une commande.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\MainController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\windows\MainController.Designer.vb">
+      <DependentUpon>MainController.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="model\connexion.manager\Connexion.vb" />
+    <Compile Include="model\produit\Product.vb" />
+    <Compile Include="model\produit\ProductManager.vb" />
+    <Compile Include="model\stock\StockManager.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="view\Product\Ajoute_Un_Produit.Designer.vb">
+      <DependentUpon>Ajoute_Un_Produit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\Product\Ajoute_Un_Produit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Product\EditProduct.Designer.vb">
+      <DependentUpon>EditProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view\Product\EditProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaiteWin.Designer.vb">
+      <DependentUpon>WaiteWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaiteWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\Stock_and_Story\AddInObject.resx">
+      <DependentUpon>AddInObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Stock_and_Story\AddOutObject.resx">
+      <DependentUpon>AddOutObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Stock_and_Story\StockManagerView.resx">
+      <DependentUpon>StockManagerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\AppConfig.resx">
+      <DependentUpon>AppConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\AddClient.resx">
+      <DependentUpon>AddClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\AddCommandWin.resx">
+      <DependentUpon>AddCommandWin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\Connexionbeeshop.resx">
+      <DependentUpon>Connexionbeeshop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\Ajouter une commande.resx">
+      <DependentUpon>Ajouter une commande.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\windows\MainController.resx">
+      <DependentUpon>MainController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Product\Ajoute_Un_Produit.resx">
+      <DependentUpon>Ajoute_Un_Produit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Product\EditProduct.resx">
+      <DependentUpon>EditProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaiteWin.resx">
+      <DependentUpon>WaiteWin.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <None Include="ressource\stock.png" />
+    <None Include="ressource\rapport.png" />
+    <None Include="ressource\product-icon suprimer.png" />
+    <None Include="ressource\product-icon modifier.png" />
+    <None Include="ressource\product-add-icon-ajouter.png" />
+    <None Include="ressource\engrenage copie.png" />
+    <None Include="ressource\035-checklist.png" />
+    <None Include="ressource\035-checklist v.png" />
+    <None Include="ressource\016-enter.png" />
+    <None Include="ressource\016-contact-del.png" />
+    <None Include="ressource\016-contact-Ajou.png" />
+    <None Include="ressource\016-contact-1.png" />
+    <None Include="ressource\014-exit.png" />
+    <None Include="ressource\002-shopping-cart Modi.png" />
+    <None Include="ressource\002-shopping-cart com.png" />
+    <None Include="ressource\002-shopping-cart ajou.png" />
+    <None Include="ressource\035-checklist F.png" />
+    <None Include="ressource\035-checklist O.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
