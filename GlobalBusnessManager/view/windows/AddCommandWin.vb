@@ -95,15 +95,12 @@
             End If
         End If
     End Sub
-
+    'Merci
     Private Sub FRAIR_LIVRAISON_TextChanged(sender As Object, e As EventArgs) Handles FRAIR_LIVRAISON.TextChanged
         If Not IsNumeric(FRAIR_LIVRAISON.Text) Then
             Button1.Enabled = False
-            FRAIR_LIVRAISON.BackColor = Color.Red
         Else
-            FRAIR_LIVRAISON.BackColor = Color.White
             PRIX_PRODUIT_TTC.Text = CInt(PRIX_PRODUIT_HT.Text) + CInt(FRAIR_LIVRAISON.Text)
-            PRIX_PRODUIT_HT.Text = CInt(QUANTITE_PRODUIT.Text) * product.getPrixDeVente
             If Not IsNumeric(CONTACT.Text) Or Not IsNumeric(QUANTITE_PRODUIT.Text) Or CLIENT_NAME.Text = "" Or COMMUNE_NAME.Text = "" Or
                 DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Then
                 Button1.Enabled = False
@@ -229,6 +226,15 @@
                 QUANTITE_PRODUIT.Text = 1
                 PRIX_PRODUIT_HT.Text = CInt(PRIX_UNITAIRE_PRODUIT.Text) * CInt(QUANTITE_PRODUIT.Text)
             End If
+
+        End If
+    End Sub
+
+    Private Sub PRIX_PRODUIT_HT_TextChanged(sender As Object, e As EventArgs) Handles PRIX_PRODUIT_HT.TextChanged
+        If Not IsNumeric(FRAIR_LIVRAISON.Text) Then
+            Button1.Enabled = False
+        Else
+            PRIX_PRODUIT_TTC.Text = CInt(PRIX_PRODUIT_HT.Text) + CInt(FRAIR_LIVRAISON.Text)
 
         End If
     End Sub

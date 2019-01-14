@@ -8,8 +8,8 @@ Public Class Connexion
     Sub New(user As String, password As String, host As String)
         connexion = New MySqlConnection
         If host = "" Then
-            MsgBox("La machine host n'a pas été configurer, La configuration par defaut sera chargée.")
-            host = "localhost"
+            'MsgBox("La machine host n'a pas été configurer, La configuration par defaut sera chargée.")
+            host = "192.168.8.10"
         End If
         connexion.ConnectionString = ("server=" + host + "; database=beeshop; user=" + user + "; Password=" + password)
     End Sub

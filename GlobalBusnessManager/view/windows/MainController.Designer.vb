@@ -108,6 +108,19 @@ Partial Class MainController
         Me.BT_BON = New System.Windows.Forms.Button()
         Me.BT_FAIBLE = New System.Windows.Forms.Button()
         Me.BP_RUPTURE = New System.Windows.Forms.Button()
+        Me.RAPPORT_LIST_VIEW = New System.Windows.Forms.DataGridView()
+        Me.rap_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_nom_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_contact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rapp_livraison = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_produit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_prix_a = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_vente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_benefice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_fact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rap_source = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.STOCK_LIST = New System.Windows.Forms.DataGridView()
         Me.id_stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.s_code = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,6 +128,19 @@ Partial Class MainController
         Me.product_stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.product_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VU_COMMAND = New System.Windows.Forms.DataGridView()
+        Me.idCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.com_product_code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.produitCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clientCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.contactCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.adressDeLivraison = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.com_prix_uni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.com_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.netPayer = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.etatCommand = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.proprieteCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.date_command = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.com_source = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FORNISSEUR_DATA_GRID = New System.Windows.Forms.DataGridView()
         Me.idFournisseur = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nameFournisseur = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -135,20 +161,6 @@ Partial Class MainController
         Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.APP_CONFIG = New System.Windows.Forms.RibbonButton()
         Me.UpDateTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.idCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.com_product_code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.produitCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clientCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.contactCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.adressDeLivraison = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.com_prix_uni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.com_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.netPayer = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.etatCommand = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.proprieteCommand = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.date_command = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.com_source = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RAPPORT_LIST_VIEW = New System.Windows.Forms.DataGridView()
         Me.STOCK_MANAGER_VIEW = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.BT_ADD_OUT_OBJECT = New System.Windows.Forms.Button()
@@ -172,18 +184,6 @@ Partial Class MainController
         Me.in_stock_init = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.in_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.in_stock_fin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_nom_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_contact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rapp_livraison = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_produit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_prix_a = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_vente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_benefice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_fact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rap_source = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.VU_RAPPORT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.STAT_BAR.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,12 +192,12 @@ Partial Class MainController
         Me.SplitContainer1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.RAPPORT_LIST_VIEW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.STOCK_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VU_COMMAND, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FORNISSEUR_DATA_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CLIENT_DATA_VIEW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRODUCT_DATA_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RAPPORT_LIST_VIEW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.STOCK_MANAGER_VIEW, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.STOCK_MANAGER_VIEW.Panel1.SuspendLayout()
         Me.STOCK_MANAGER_VIEW.Panel2.SuspendLayout()
@@ -861,6 +861,7 @@ Partial Class MainController
         Me.BT_RAP_WEEK.AltKey = Nothing
         Me.BT_RAP_WEEK.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down
         Me.BT_RAP_WEEK.DropDownArrowSize = New System.Drawing.Size(5, 3)
+        Me.BT_RAP_WEEK.Enabled = False
         Me.BT_RAP_WEEK.Image = CType(resources.GetObject("BT_RAP_WEEK.Image"), System.Drawing.Image)
         Me.BT_RAP_WEEK.SmallImage = CType(resources.GetObject("BT_RAP_WEEK.SmallImage"), System.Drawing.Image)
         Me.BT_RAP_WEEK.Style = System.Windows.Forms.RibbonButtonStyle.Normal
@@ -875,6 +876,7 @@ Partial Class MainController
         Me.BT_RAP_MONTH.AltKey = Nothing
         Me.BT_RAP_MONTH.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down
         Me.BT_RAP_MONTH.DropDownArrowSize = New System.Drawing.Size(5, 3)
+        Me.BT_RAP_MONTH.Enabled = False
         Me.BT_RAP_MONTH.Image = CType(resources.GetObject("BT_RAP_MONTH.Image"), System.Drawing.Image)
         Me.BT_RAP_MONTH.SmallImage = CType(resources.GetObject("BT_RAP_MONTH.SmallImage"), System.Drawing.Image)
         Me.BT_RAP_MONTH.Style = System.Windows.Forms.RibbonButtonStyle.Normal
@@ -1213,6 +1215,82 @@ Partial Class MainController
         Me.BP_RUPTURE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BP_RUPTURE.UseVisualStyleBackColor = False
         '
+        'RAPPORT_LIST_VIEW
+        '
+        Me.RAPPORT_LIST_VIEW.AllowUserToAddRows = False
+        Me.RAPPORT_LIST_VIEW.AllowUserToDeleteRows = False
+        Me.RAPPORT_LIST_VIEW.AllowUserToResizeRows = False
+        Me.RAPPORT_LIST_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.RAPPORT_LIST_VIEW.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rap_id, Me.rap_date, Me.rap_nom_client, Me.rap_contact, Me.rapp_livraison, Me.rap_produit, Me.rap_prix_a, Me.rap_vente, Me.rap_quantite, Me.rap_benefice, Me.rap_fact, Me.rap_source})
+        Me.RAPPORT_LIST_VIEW.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RAPPORT_LIST_VIEW.Location = New System.Drawing.Point(0, 0)
+        Me.RAPPORT_LIST_VIEW.Name = "RAPPORT_LIST_VIEW"
+        Me.RAPPORT_LIST_VIEW.Size = New System.Drawing.Size(878, 439)
+        Me.RAPPORT_LIST_VIEW.TabIndex = 7
+        '
+        'rap_id
+        '
+        Me.rap_id.HeaderText = "id"
+        Me.rap_id.Name = "rap_id"
+        Me.rap_id.Visible = False
+        '
+        'rap_date
+        '
+        Me.rap_date.HeaderText = "Date"
+        Me.rap_date.Name = "rap_date"
+        Me.rap_date.Width = 90
+        '
+        'rap_nom_client
+        '
+        Me.rap_nom_client.HeaderText = "Nom du client"
+        Me.rap_nom_client.Name = "rap_nom_client"
+        '
+        'rap_contact
+        '
+        Me.rap_contact.HeaderText = "Contact du client"
+        Me.rap_contact.Name = "rap_contact"
+        '
+        'rapp_livraison
+        '
+        Me.rapp_livraison.HeaderText = "Adresse"
+        Me.rapp_livraison.Name = "rapp_livraison"
+        '
+        'rap_produit
+        '
+        Me.rap_produit.HeaderText = "Nom du produit"
+        Me.rap_produit.Name = "rap_produit"
+        '
+        'rap_prix_a
+        '
+        Me.rap_prix_a.HeaderText = "Prix d'achat"
+        Me.rap_prix_a.Name = "rap_prix_a"
+        '
+        'rap_vente
+        '
+        Me.rap_vente.HeaderText = "Prix de vente"
+        Me.rap_vente.Name = "rap_vente"
+        '
+        'rap_quantite
+        '
+        Me.rap_quantite.HeaderText = "Quantité"
+        Me.rap_quantite.Name = "rap_quantite"
+        Me.rap_quantite.Width = 60
+        '
+        'rap_benefice
+        '
+        Me.rap_benefice.HeaderText = "Bénéfice"
+        Me.rap_benefice.Name = "rap_benefice"
+        '
+        'rap_fact
+        '
+        Me.rap_fact.HeaderText = "Agent facteur"
+        Me.rap_fact.Name = "rap_fact"
+        '
+        'rap_source
+        '
+        Me.rap_source.HeaderText = "Source"
+        Me.rap_source.Name = "rap_source"
+        '
         'STOCK_LIST
         '
         Me.STOCK_LIST.AllowUserToAddRows = False
@@ -1275,6 +1353,82 @@ Partial Class MainController
         Me.VU_COMMAND.Size = New System.Drawing.Size(878, 439)
         Me.VU_COMMAND.TabIndex = 4
         Me.VU_COMMAND.Visible = False
+        '
+        'idCommand
+        '
+        Me.idCommand.HeaderText = "id"
+        Me.idCommand.Name = "idCommand"
+        Me.idCommand.Visible = False
+        Me.idCommand.Width = 40
+        '
+        'com_product_code
+        '
+        Me.com_product_code.HeaderText = "code du produit"
+        Me.com_product_code.Name = "com_product_code"
+        Me.com_product_code.Width = 150
+        '
+        'produitCommand
+        '
+        Me.produitCommand.HeaderText = "nom du produit"
+        Me.produitCommand.Name = "produitCommand"
+        '
+        'clientCommand
+        '
+        Me.clientCommand.HeaderText = "nom du client"
+        Me.clientCommand.Name = "clientCommand"
+        Me.clientCommand.Width = 150
+        '
+        'contactCommand
+        '
+        Me.contactCommand.HeaderText = "contact"
+        Me.contactCommand.Name = "contactCommand"
+        '
+        'adressDeLivraison
+        '
+        Me.adressDeLivraison.HeaderText = "adresse de livraison"
+        Me.adressDeLivraison.Name = "adressDeLivraison"
+        Me.adressDeLivraison.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.adressDeLivraison.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.adressDeLivraison.Width = 120
+        '
+        'com_prix_uni
+        '
+        Me.com_prix_uni.HeaderText = "Prix unitaire"
+        Me.com_prix_uni.Name = "com_prix_uni"
+        '
+        'com_quantite
+        '
+        Me.com_quantite.HeaderText = "Quantite"
+        Me.com_quantite.Name = "com_quantite"
+        '
+        'netPayer
+        '
+        Me.netPayer.HeaderText = "net à payer"
+        Me.netPayer.Name = "netPayer"
+        Me.netPayer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.netPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'etatCommand
+        '
+        Me.etatCommand.HeaderText = "status"
+        Me.etatCommand.Name = "etatCommand"
+        Me.etatCommand.ReadOnly = True
+        Me.etatCommand.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'proprieteCommand
+        '
+        Me.proprieteCommand.HeaderText = "Id de l'agent"
+        Me.proprieteCommand.Name = "proprieteCommand"
+        '
+        'date_command
+        '
+        Me.date_command.HeaderText = "Date de la commande"
+        Me.date_command.Name = "date_command"
+        '
+        'com_source
+        '
+        Me.com_source.HeaderText = "Source"
+        Me.com_source.Name = "com_source"
         '
         'FORNISSEUR_DATA_GRID
         '
@@ -1428,95 +1582,6 @@ Partial Class MainController
         'UpDateTimer
         '
         Me.UpDateTimer.Interval = 1000
-        '
-        'idCommand
-        '
-        Me.idCommand.HeaderText = "id"
-        Me.idCommand.Name = "idCommand"
-        Me.idCommand.Visible = False
-        Me.idCommand.Width = 40
-        '
-        'com_product_code
-        '
-        Me.com_product_code.HeaderText = "code du produit"
-        Me.com_product_code.Name = "com_product_code"
-        Me.com_product_code.Width = 150
-        '
-        'produitCommand
-        '
-        Me.produitCommand.HeaderText = "nom du produit"
-        Me.produitCommand.Name = "produitCommand"
-        '
-        'clientCommand
-        '
-        Me.clientCommand.HeaderText = "nom du client"
-        Me.clientCommand.Name = "clientCommand"
-        Me.clientCommand.Width = 150
-        '
-        'contactCommand
-        '
-        Me.contactCommand.HeaderText = "contact"
-        Me.contactCommand.Name = "contactCommand"
-        '
-        'adressDeLivraison
-        '
-        Me.adressDeLivraison.HeaderText = "adresse de livraison"
-        Me.adressDeLivraison.Name = "adressDeLivraison"
-        Me.adressDeLivraison.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.adressDeLivraison.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.adressDeLivraison.Width = 120
-        '
-        'com_prix_uni
-        '
-        Me.com_prix_uni.HeaderText = "Prix unitaire"
-        Me.com_prix_uni.Name = "com_prix_uni"
-        '
-        'com_quantite
-        '
-        Me.com_quantite.HeaderText = "Quantite"
-        Me.com_quantite.Name = "com_quantite"
-        '
-        'netPayer
-        '
-        Me.netPayer.HeaderText = "net à payer"
-        Me.netPayer.Name = "netPayer"
-        Me.netPayer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.netPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'etatCommand
-        '
-        Me.etatCommand.HeaderText = "status"
-        Me.etatCommand.Name = "etatCommand"
-        Me.etatCommand.ReadOnly = True
-        Me.etatCommand.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'proprieteCommand
-        '
-        Me.proprieteCommand.HeaderText = "Id de l'agent"
-        Me.proprieteCommand.Name = "proprieteCommand"
-        '
-        'date_command
-        '
-        Me.date_command.HeaderText = "Date de la commande"
-        Me.date_command.Name = "date_command"
-        '
-        'com_source
-        '
-        Me.com_source.HeaderText = "Source"
-        Me.com_source.Name = "com_source"
-        '
-        'RAPPORT_LIST_VIEW
-        '
-        Me.RAPPORT_LIST_VIEW.AllowUserToAddRows = False
-        Me.RAPPORT_LIST_VIEW.AllowUserToDeleteRows = False
-        Me.RAPPORT_LIST_VIEW.AllowUserToResizeRows = False
-        Me.RAPPORT_LIST_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.RAPPORT_LIST_VIEW.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rap_id, Me.rap_date, Me.rap_nom_client, Me.rap_contact, Me.rapp_livraison, Me.rap_produit, Me.rap_prix_a, Me.rap_vente, Me.rap_quantite, Me.rap_benefice, Me.rap_fact, Me.rap_source})
-        Me.RAPPORT_LIST_VIEW.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RAPPORT_LIST_VIEW.Location = New System.Drawing.Point(0, 0)
-        Me.RAPPORT_LIST_VIEW.Name = "RAPPORT_LIST_VIEW"
-        Me.RAPPORT_LIST_VIEW.Size = New System.Drawing.Size(878, 439)
-        Me.RAPPORT_LIST_VIEW.TabIndex = 7
         '
         'STOCK_MANAGER_VIEW
         '
@@ -1711,69 +1776,6 @@ Partial Class MainController
         Me.in_stock_fin.HeaderText = "Stock final"
         Me.in_stock_fin.Name = "in_stock_fin"
         '
-        'rap_id
-        '
-        Me.rap_id.HeaderText = "id"
-        Me.rap_id.Name = "rap_id"
-        Me.rap_id.Visible = False
-        '
-        'rap_date
-        '
-        Me.rap_date.HeaderText = "Date"
-        Me.rap_date.Name = "rap_date"
-        Me.rap_date.Width = 90
-        '
-        'rap_nom_client
-        '
-        Me.rap_nom_client.HeaderText = "Nom du client"
-        Me.rap_nom_client.Name = "rap_nom_client"
-        '
-        'rap_contact
-        '
-        Me.rap_contact.HeaderText = "Contact du client"
-        Me.rap_contact.Name = "rap_contact"
-        '
-        'rapp_livraison
-        '
-        Me.rapp_livraison.HeaderText = "Adresse"
-        Me.rapp_livraison.Name = "rapp_livraison"
-        '
-        'rap_produit
-        '
-        Me.rap_produit.HeaderText = "Nom du produit"
-        Me.rap_produit.Name = "rap_produit"
-        '
-        'rap_prix_a
-        '
-        Me.rap_prix_a.HeaderText = "Prix d'achat"
-        Me.rap_prix_a.Name = "rap_prix_a"
-        '
-        'rap_vente
-        '
-        Me.rap_vente.HeaderText = "Prix de vente"
-        Me.rap_vente.Name = "rap_vente"
-        '
-        'rap_quantite
-        '
-        Me.rap_quantite.HeaderText = "Quantité"
-        Me.rap_quantite.Name = "rap_quantite"
-        Me.rap_quantite.Width = 60
-        '
-        'rap_benefice
-        '
-        Me.rap_benefice.HeaderText = "Bénéfice"
-        Me.rap_benefice.Name = "rap_benefice"
-        '
-        'rap_fact
-        '
-        Me.rap_fact.HeaderText = "Agent facteur"
-        Me.rap_fact.Name = "rap_fact"
-        '
-        'rap_source
-        '
-        Me.rap_source.HeaderText = "Source"
-        Me.rap_source.Name = "rap_source"
-        '
         'MainController
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1799,12 +1801,12 @@ Partial Class MainController
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.RAPPORT_LIST_VIEW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.STOCK_LIST, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VU_COMMAND, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FORNISSEUR_DATA_GRID, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CLIENT_DATA_VIEW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRODUCT_DATA_GRID, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RAPPORT_LIST_VIEW, System.ComponentModel.ISupportInitialize).EndInit()
         Me.STOCK_MANAGER_VIEW.Panel1.ResumeLayout(False)
         Me.STOCK_MANAGER_VIEW.Panel2.ResumeLayout(False)
         CType(Me.STOCK_MANAGER_VIEW, System.ComponentModel.ISupportInitialize).EndInit()

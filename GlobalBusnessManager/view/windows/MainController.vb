@@ -223,6 +223,23 @@ Public Class MainController
         basicCommandeManager.validateCourrantStat(basicCommandeManager.getRowSelectedIdValue)
     End Sub
 #End Region
+#Region "Display Srevices"
+    Private Sub BT_DISPLAY_PRO_Click(sender As Object, e As EventArgs) Handles BT_DISPLAY_PRO.Click
+        productManager.updateProductDataGrid()
+        dataGridManager.productView()
+    End Sub
+    Private Sub BT_DISPLAY_COM_Click(sender As Object, e As EventArgs) Handles BT_DISPLAY_COM.Click
+        Try
+            basicCommandeManager.updateCommandDataGrid()
+            dataGridManager.commandView()
+        Catch ex As Exception
+            MsgBox("Veuillez vous connceter avant d'afficher les commandes")
+        End Try
+    End Sub
+    Private Sub BT_DISPLAY_CLT_Click(sender As Object, e As EventArgs) Handles BT_DISPLAY_CLT.Click
+        dataGridManager.clientView()
+    End Sub
+#End Region
 #Region "Function interface"
     Public Sub activatButton(ByVal seting As Boolean)
         With Me.

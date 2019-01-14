@@ -53,6 +53,7 @@ Partial Class AddCommandWin
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ERREUR_QUANITE = New System.Windows.Forms.Label()
         Me.PRIX_PRODUIT_HT = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -68,7 +69,6 @@ Partial Class AddCommandWin
         Me.SOURCE_STCK_BOX = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.AGENT_BOX = New System.Windows.Forms.ComboBox()
-        Me.ERREUR_QUANITE = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -314,6 +314,7 @@ Partial Class AddCommandWin
         Me.FRAIR_LIVRAISON.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.FRAIR_LIVRAISON.Location = New System.Drawing.Point(132, 58)
         Me.FRAIR_LIVRAISON.Name = "FRAIR_LIVRAISON"
+        Me.FRAIR_LIVRAISON.ReadOnly = True
         Me.FRAIR_LIVRAISON.Size = New System.Drawing.Size(203, 20)
         Me.FRAIR_LIVRAISON.TabIndex = 11
         '
@@ -385,6 +386,16 @@ Partial Class AddCommandWin
         Me.GroupBox6.Size = New System.Drawing.Size(273, 126)
         Me.GroupBox6.TabIndex = 1128
         Me.GroupBox6.TabStop = False
+        '
+        'ERREUR_QUANITE
+        '
+        Me.ERREUR_QUANITE.AutoSize = True
+        Me.ERREUR_QUANITE.ForeColor = System.Drawing.Color.Red
+        Me.ERREUR_QUANITE.Location = New System.Drawing.Point(157, 12)
+        Me.ERREUR_QUANITE.Name = "ERREUR_QUANITE"
+        Me.ERREUR_QUANITE.Size = New System.Drawing.Size(95, 13)
+        Me.ERREUR_QUANITE.TabIndex = 1128
+        Me.ERREUR_QUANITE.Text = "> à la qte en stock"
         '
         'PRIX_PRODUIT_HT
         '
@@ -526,16 +537,6 @@ Partial Class AddCommandWin
         Me.AGENT_BOX.Name = "AGENT_BOX"
         Me.AGENT_BOX.Size = New System.Drawing.Size(113, 21)
         Me.AGENT_BOX.TabIndex = 0
-        '
-        'ERREUR_QUANITE
-        '
-        Me.ERREUR_QUANITE.AutoSize = True
-        Me.ERREUR_QUANITE.ForeColor = System.Drawing.Color.Red
-        Me.ERREUR_QUANITE.Location = New System.Drawing.Point(157, 12)
-        Me.ERREUR_QUANITE.Name = "ERREUR_QUANITE"
-        Me.ERREUR_QUANITE.Size = New System.Drawing.Size(95, 13)
-        Me.ERREUR_QUANITE.TabIndex = 1128
-        Me.ERREUR_QUANITE.Text = "> à la qte en stock"
         '
         'AddCommandWin
         '
