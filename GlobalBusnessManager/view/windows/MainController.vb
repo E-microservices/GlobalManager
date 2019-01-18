@@ -16,6 +16,7 @@ Public Class MainController
     Dim mOutObject As OutObject
     Dim mRappor As Rapport
     Dim mRapportManager As RapportManager
+    Dim bmp As Bitmap
 #End Region
     Private Sub MainController_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.STOCK_MANAGER_VIEW.Visible = False
@@ -300,6 +301,17 @@ Public Class MainController
                               basicCommandeManager.getRowSelectedAgentValue, basicCommandeManager.getRowSelectedSourceValue)
         mRapportManager.doRapport(mRappor)
     End Sub
+    Private Sub makeAndSaveOutProductRapport()
+        product = productManager.getProductByCode(AddOutObject.SEARCH_TEXT.Text)
+        Dim benefice As Integer
+        benefice = 0
+        mRappor = New Rapport(Date.Now, "NULL",
+                              "NULL", AddOutObject.O_DESTINATION.Text,
+                              product.getNom, CInt(product.getPrixAchat),
+                              0, CInt(AddOutObject.O_QUANTITE.Text), benefice,
+                              AddOutObject.O_CAUSE.Text, "BOUTIQUE")
+        mRapportManager.doRapport(mRappor)
+    End Sub
 #End Region
     Private Sub STOCK_LIST_Click(sender As Object, e As EventArgs) Handles STOCK_LIST.CellValueChanged
         Try
@@ -309,6 +321,46 @@ Public Class MainController
         End Try
     End Sub
 
+    Private Sub BT_ADD_IN_OBJECT_Click_1(sender As Object, e As EventArgs) Handles BT_ADD_IN_OBJECT.Click
+        AddInObject.ShowDialog()
+        If AddInObject.DialogResult = DialogResult.Cancel Then
+            Exit Sub
+        End If
+        stockManager.addInObject(makeInObjectByDiarlog)
+        displayInObject(stockManager.getInObject)
+    End Sub
 
+    Private Sub BT_ADD_OUT_OBJECT_Click_1(sender As Object, e As EventArgs) Handles BT_ADD_OUT_OBJECT.Click
+        AddOutObject.ShowDialog()
+        If AddOutObject.DialogResult = DialogResult.Cancel Then
+            Exit Sub
+        End If
+        stockManager.addOutObject(makeOutObjectByDiarlog)
+        displayOutObject(stockManager.getOutObject)
+        makeAndSaveOutProductRapport()
+    End Sub
+#Region "IMPRESSION"
+    Private Sub BT_IMPRESSION_Click(sender As Object, e As EventArgs) Handles BT_IMPRESSION.Click
+        'bmp = impressionRappor(VU_RAPPORT)
+        Dim heith_d As Integer
+        Dim whith_d As Integer
+        heith_d = VU_RAPPORT.Height
+        whith_d = VU_RAPPORT.Width
+
+        'VU_RAPPORT.Height = VU_RAPPORT.RowCount * VU_RAPPORT.RowTemplate.Height
+
+        bmp = New Bitmap(whith_d, heith_d)
+        VU_RAPPORT.DrawToBitmap(bmp, New Rectangle(0, 0, VU_RAPPORT.Width, VU_RAPPORT.Height))
+        VU_RAPPORT.Height = heith_d
+        PrintDocument.DefaultPageSettings.Landscape = False
+        'PrintDocument1.Print()
+        PrintPreviewDialog.Document = PrintDocument
+        PrintPreviewDialog.ShowDialog()
+    End Sub
+
+    Private Sub PrintDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument.PrintPage
+        e.Graphics.DrawImage(bmp, 0, 0)
+    End Sub
+#End Region
 End Class
 

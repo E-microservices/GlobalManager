@@ -120,6 +120,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="impression_d\Impression.vb" />
+    <Compile Include="impression_d\ImpressionModule1.vb" />
     <Compile Include="model\agentsrapp\Agent.vb" />
     <Compile Include="model\agentsrapp\AgentManager.vb" />
     <Compile Include="model\agentsrapp\AgentModule.vb" />

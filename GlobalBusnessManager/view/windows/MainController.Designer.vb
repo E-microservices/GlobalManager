@@ -164,8 +164,6 @@ Partial Class MainController
         Me.STOCK_MANAGER_VIEW = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.BT_ADD_OUT_OBJECT = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.OUT_PRODUCT_GRID = New System.Windows.Forms.DataGridView()
         Me.id_sortie = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.out_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -175,8 +173,6 @@ Partial Class MainController
         Me.out_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SplitContainer4 = New System.Windows.Forms.SplitContainer()
         Me.BT_ADD_IN_OBJECT = New System.Windows.Forms.Button()
-        Me.StatusStrip2 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.IN_PRODUCT_GRID = New System.Windows.Forms.DataGridView()
         Me.id_entrer = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.in_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -184,6 +180,8 @@ Partial Class MainController
         Me.in_stock_init = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.in_quantite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.in_stock_fin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
+        Me.PrintPreviewDialog = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.VU_RAPPORT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.STAT_BAR.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,13 +204,11 @@ Partial Class MainController
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
         Me.SplitContainer3.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
         CType(Me.OUT_PRODUCT_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer4.Panel1.SuspendLayout()
         Me.SplitContainer4.Panel2.SuspendLayout()
         Me.SplitContainer4.SuspendLayout()
-        Me.StatusStrip2.SuspendLayout()
         CType(Me.IN_PRODUCT_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -1611,7 +1607,6 @@ Partial Class MainController
         'SplitContainer3.Panel1
         '
         Me.SplitContainer3.Panel1.Controls.Add(Me.BT_ADD_OUT_OBJECT)
-        Me.SplitContainer3.Panel1.Controls.Add(Me.StatusStrip1)
         '
         'SplitContainer3.Panel2
         '
@@ -1628,21 +1623,6 @@ Partial Class MainController
         Me.BT_ADD_OUT_OBJECT.TabIndex = 1
         Me.BT_ADD_OUT_OBJECT.Text = "AJOUTER"
         Me.BT_ADD_OUT_OBJECT.UseVisualStyleBackColor = True
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 3)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(549, 22)
-        Me.StatusStrip1.TabIndex = 0
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(105, 17)
-        Me.ToolStripStatusLabel2.Text = "LISTE DES SORTIES"
         '
         'OUT_PRODUCT_GRID
         '
@@ -1699,7 +1679,6 @@ Partial Class MainController
         'SplitContainer4.Panel1
         '
         Me.SplitContainer4.Panel1.Controls.Add(Me.BT_ADD_IN_OBJECT)
-        Me.SplitContainer4.Panel1.Controls.Add(Me.StatusStrip2)
         '
         'SplitContainer4.Panel2
         '
@@ -1716,21 +1695,6 @@ Partial Class MainController
         Me.BT_ADD_IN_OBJECT.TabIndex = 1
         Me.BT_ADD_IN_OBJECT.Text = "AJOUTER"
         Me.BT_ADD_IN_OBJECT.UseVisualStyleBackColor = True
-        '
-        'StatusStrip2
-        '
-        Me.StatusStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3})
-        Me.StatusStrip2.Location = New System.Drawing.Point(0, 3)
-        Me.StatusStrip2.Name = "StatusStrip2"
-        Me.StatusStrip2.Size = New System.Drawing.Size(560, 22)
-        Me.StatusStrip2.TabIndex = 0
-        Me.StatusStrip2.Text = "StatusStrip2"
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(108, 17)
-        Me.ToolStripStatusLabel3.Text = "LISTE DES ENTREES"
         '
         'IN_PRODUCT_GRID
         '
@@ -1776,6 +1740,19 @@ Partial Class MainController
         Me.in_stock_fin.HeaderText = "Stock final"
         Me.in_stock_fin.Name = "in_stock_fin"
         '
+        'PrintDocument
+        '
+        '
+        'PrintPreviewDialog
+        '
+        Me.PrintPreviewDialog.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog.Enabled = True
+        Me.PrintPreviewDialog.Icon = CType(resources.GetObject("PrintPreviewDialog.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog.Name = "PrintPreviewDialog"
+        Me.PrintPreviewDialog.Visible = False
+        '
         'MainController
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1812,20 +1789,14 @@ Partial Class MainController
         CType(Me.STOCK_MANAGER_VIEW, System.ComponentModel.ISupportInitialize).EndInit()
         Me.STOCK_MANAGER_VIEW.ResumeLayout(False)
         Me.SplitContainer3.Panel1.ResumeLayout(False)
-        Me.SplitContainer3.Panel1.PerformLayout()
         Me.SplitContainer3.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.ResumeLayout(False)
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         CType(Me.OUT_PRODUCT_GRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer4.Panel1.ResumeLayout(False)
-        Me.SplitContainer4.Panel1.PerformLayout()
         Me.SplitContainer4.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer4.ResumeLayout(False)
-        Me.StatusStrip2.ResumeLayout(False)
-        Me.StatusStrip2.PerformLayout()
         CType(Me.IN_PRODUCT_GRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1960,8 +1931,6 @@ Partial Class MainController
     Friend WithEvents STOCK_MANAGER_VIEW As SplitContainer
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents BT_ADD_OUT_OBJECT As Button
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents OUT_PRODUCT_GRID As DataGridView
     Friend WithEvents id_sortie As DataGridViewTextBoxColumn
     Friend WithEvents out_date As DataGridViewTextBoxColumn
@@ -1971,8 +1940,6 @@ Partial Class MainController
     Friend WithEvents out_quantite As DataGridViewTextBoxColumn
     Friend WithEvents SplitContainer4 As SplitContainer
     Friend WithEvents BT_ADD_IN_OBJECT As Button
-    Friend WithEvents StatusStrip2 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents IN_PRODUCT_GRID As DataGridView
     Friend WithEvents id_entrer As DataGridViewTextBoxColumn
     Friend WithEvents in_date As DataGridViewTextBoxColumn
@@ -1992,4 +1959,6 @@ Partial Class MainController
     Friend WithEvents rap_benefice As DataGridViewTextBoxColumn
     Friend WithEvents rap_fact As DataGridViewTextBoxColumn
     Friend WithEvents rap_source As DataGridViewTextBoxColumn
+    Friend WithEvents PrintDocument As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog As PrintPreviewDialog
 End Class
