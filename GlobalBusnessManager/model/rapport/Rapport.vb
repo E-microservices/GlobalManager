@@ -11,6 +11,7 @@
     Private mBenefice As Integer
     Private mAgentFacteur As String
     Private mAcquisition As String
+    Private mLivreur As String
     Sub New()
 
     End Sub
@@ -26,6 +27,7 @@
         mBenefice = benefice
         mAgentFacteur = agentFacteur
         mAcquisition = aquisition
+        mLivreur = ""
     End Sub
     Sub New(id As Integer, idate As Date, clientName As String, contact As String, adresseLivraison As String, productName As String, prixAchat As Integer, prixVente As Integer, quantite As Integer, benefice As Integer, agentFacteur As String, aquisition As String)
         mId = id
@@ -40,6 +42,22 @@
         mBenefice = benefice
         mAgentFacteur = agentFacteur
         mAcquisition = aquisition
+        mLivreur = ""
+    End Sub
+    Sub New(id As Integer, idate As Date, clientName As String, contact As String, adresseLivraison As String, productName As String, prixAchat As Integer, prixVente As Integer, quantite As Integer, benefice As Integer, agentFacteur As String, aquisition As String, livreur As String)
+        mId = id
+        mDate = idate.ToShortDateString
+        mClientName = clientName
+        mContact = contact
+        mAdresseLivarison = adresseLivraison
+        mProduitName = productName
+        mPrixAchat = prixAchat
+        mPrixVente = prixVente
+        mQuanite = quantite
+        mBenefice = benefice
+        mAgentFacteur = agentFacteur
+        mAcquisition = aquisition
+        mLivreur = livreur
     End Sub
 
     Private Sub setId(id As Integer)
@@ -79,6 +97,9 @@
     Public Sub setAquition(aquisition As String)
         mAcquisition = aquisition
     End Sub
+    Public Sub setLivreur(livreur As String)
+        mLivreur = livreur
+    End Sub
 
     Public Function getId() As Integer
         Return mId
@@ -115,5 +136,8 @@
     End Function
     Public Function getSource() As String
         Return mAcquisition
+    End Function
+    Public Function getLivreur() As String
+        Return mLivreur
     End Function
 End Class

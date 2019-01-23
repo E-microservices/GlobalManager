@@ -1,6 +1,8 @@
 ﻿Public Class AddCommandWin
     'Pour une raison de code PRODUCT_NAME.Text est devenu PRODUCT_CODE.Text vis vers a
     Private listProduct As List(Of Product)
+    Private listOflivreur As List(Of Livreur)
+    Private livreurManager As LivreurManager
     Private productManager As ProductManager
     Private product As Product
     Public command As BasicCommand
@@ -11,9 +13,14 @@
     Private Sub AddCommandWin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DATE_COMMANDE.ReadOnly = True
         productManager = New ProductManager(MainController.getMainConnexion)
+        livreurManager = New LivreurManager(MainController.getMainConnexion)
+        listOflivreur = livreurManager.getAllLivreur
         product = New Product
         listProduct = New List(Of Product)
         command = New BasicCommand
+        For Each livreur As Livreur In listOflivreur
+            CB_LIVEUR_CHARGE.Items.Add(livreur.getName)
+        Next
         Me.eraseContente()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -49,6 +56,7 @@
         command.setCommandStat("En Cours")
         command.setSource(SOURCE_STCK_BOX.Text)
         command.setSource(mSource)
+        command.setLivreur(CB_LIVEUR_CHARGE.Text)
         Me.Close()
     End Sub
     Private Sub SEARCH_TEXT_TextChanged(sender As Object, e As EventArgs) Handles SEARCH_TEXT.TextChanged
@@ -129,6 +137,7 @@
             LIEUR_LIVRAISON.Text = ""
             FRAIR_LIVRAISON.Text = "0"
             PRIX_PRODUIT_TTC.Text = "0"
+            CB_LIVEUR_CHARGE.Text = ""
         End With
     End Sub
     Public Function getCommand() As BasicCommand
@@ -146,7 +155,7 @@
         Else
             CONTACT.BackColor = Color.White
             If Not IsNumeric(CONTACT.Text) Or Not IsNumeric(QUANTITE_PRODUIT.Text) Or CLIENT_NAME.Text = "" Or COMMUNE_NAME.Text = "" Or
-                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Then
+                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Or CB_LIVEUR_CHARGE.Text = "" Then
                 Button1.Enabled = False
             Else
                 Button1.Enabled = True
@@ -161,7 +170,7 @@
         Else
             CLIENT_NAME.BackColor = Color.White
             If Not IsNumeric(CONTACT.Text) Or Not IsNumeric(QUANTITE_PRODUIT.Text) Or CLIENT_NAME.Text = "" Or COMMUNE_NAME.Text = "" Or
-                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Then
+                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Or CB_LIVEUR_CHARGE.Text = "" Then
                 Button1.Enabled = False
             Else
                 Button1.Enabled = True
@@ -176,7 +185,7 @@
         Else
             COMMUNE_NAME.BackColor = Color.White
             If Not IsNumeric(CONTACT.Text) Or Not IsNumeric(QUANTITE_PRODUIT.Text) Or CLIENT_NAME.Text = "" Or COMMUNE_NAME.Text = "" Or
-                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Then
+                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Or CB_LIVEUR_CHARGE.Text = "" Then
                 Button1.Enabled = False
             Else
                 Button1.Enabled = True
@@ -191,7 +200,7 @@
         Else
             LIEUR_LIVRAISON.BackColor = Color.White
             If Not IsNumeric(CONTACT.Text) Or Not IsNumeric(QUANTITE_PRODUIT.Text) Or CLIENT_NAME.Text = "" Or COMMUNE_NAME.Text = "" Or
-                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Then
+                DATE_COMMANDE.Text = "" Or LIEUR_LIVRAISON.Text = "" Or Not IsNumeric(FRAIR_LIVRAISON.Text) Or CB_LIVEUR_CHARGE.Text = "" Then
                 Button1.Enabled = False
             Else
                 Button1.Enabled = True

@@ -298,7 +298,7 @@ Public Class MainController
                               basicCommandeManager.getRowSelectedClientContactValue, basicCommandeManager.getRowSelectedClientAdresseValue,
                               basicCommandeManager.getRowSelectedProductNameValue, CInt(product.getPrixAchat),
                               CInt(basicCommandeManager.getRowSelectedPrixUnitaireValue), CInt(basicCommandeManager.getRowSelectedQuantiteValue), benefice,
-                              basicCommandeManager.getRowSelectedAgentValue, basicCommandeManager.getRowSelectedSourceValue)
+                              basicCommandeManager.getRowSelectedAgentValue, basicCommandeManager.getRowSelectedSourceValue, basicCommandeManager.getRowSelectedLivreurValue)
         mRapportManager.doRapport(mRappor)
     End Sub
     Private Sub makeAndSaveOutProductRapport()

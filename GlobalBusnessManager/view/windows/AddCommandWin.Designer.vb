@@ -69,6 +69,8 @@ Partial Class AddCommandWin
         Me.SOURCE_STCK_BOX = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.AGENT_BOX = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.CB_LIVEUR_CHARGE = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -488,6 +490,8 @@ Partial Class AddCommandWin
         '
         'GroupBox8
         '
+        Me.GroupBox8.Controls.Add(Me.Label20)
+        Me.GroupBox8.Controls.Add(Me.CB_LIVEUR_CHARGE)
         Me.GroupBox8.Controls.Add(Me.Label19)
         Me.GroupBox8.Controls.Add(Me.SOURCE_STCK_BOX)
         Me.GroupBox8.Controls.Add(Me.Label18)
@@ -502,7 +506,7 @@ Partial Class AddCommandWin
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(36, 72)
+        Me.Label19.Location = New System.Drawing.Point(36, 56)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(85, 13)
         Me.Label19.TabIndex = 3
@@ -513,7 +517,7 @@ Partial Class AddCommandWin
         Me.SOURCE_STCK_BOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SOURCE_STCK_BOX.FormattingEnabled = True
         Me.SOURCE_STCK_BOX.Items.AddRange(New Object() {"FOURNISSEUR", "BOUTIQUE"})
-        Me.SOURCE_STCK_BOX.Location = New System.Drawing.Point(21, 94)
+        Me.SOURCE_STCK_BOX.Location = New System.Drawing.Point(21, 71)
         Me.SOURCE_STCK_BOX.Name = "SOURCE_STCK_BOX"
         Me.SOURCE_STCK_BOX.Size = New System.Drawing.Size(113, 21)
         Me.SOURCE_STCK_BOX.TabIndex = 2
@@ -521,7 +525,7 @@ Partial Class AddCommandWin
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(58, 22)
+        Me.Label18.Location = New System.Drawing.Point(58, 17)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(38, 13)
         Me.Label18.TabIndex = 1
@@ -532,11 +536,29 @@ Partial Class AddCommandWin
         Me.AGENT_BOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.AGENT_BOX.FormattingEnabled = True
         Me.AGENT_BOX.Items.AddRange(New Object() {"FRANCK", "HILAIRE", "ISSOUF", "CEDRICK", "LA PAGE"})
-        Me.AGENT_BOX.Location = New System.Drawing.Point(21, 43)
+        Me.AGENT_BOX.Location = New System.Drawing.Point(21, 32)
         Me.AGENT_BOX.MaxLength = 10
         Me.AGENT_BOX.Name = "AGENT_BOX"
         Me.AGENT_BOX.Size = New System.Drawing.Size(113, 21)
         Me.AGENT_BOX.TabIndex = 0
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(36, 93)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(90, 13)
+        Me.Label20.TabIndex = 5
+        Me.Label20.Text = "Livreur en charge"
+        '
+        'CB_LIVEUR_CHARGE
+        '
+        Me.CB_LIVEUR_CHARGE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_LIVEUR_CHARGE.FormattingEnabled = True
+        Me.CB_LIVEUR_CHARGE.Location = New System.Drawing.Point(21, 108)
+        Me.CB_LIVEUR_CHARGE.Name = "CB_LIVEUR_CHARGE"
+        Me.CB_LIVEUR_CHARGE.Size = New System.Drawing.Size(113, 21)
+        Me.CB_LIVEUR_CHARGE.TabIndex = 4
         '
         'AddCommandWin
         '
@@ -621,4 +643,6 @@ Partial Class AddCommandWin
     Friend WithEvents SOURCE_STCK_BOX As ComboBox
     Friend WithEvents EDIT_PRICE As CheckBox
     Friend WithEvents ERREUR_QUANITE As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents CB_LIVEUR_CHARGE As ComboBox
 End Class

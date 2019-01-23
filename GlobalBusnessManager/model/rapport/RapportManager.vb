@@ -11,8 +11,8 @@ Public Class RapportManager
     End Sub
 
     Public Sub doRapport(rapport As Rapport)
-        mQuery = "INSERT INTO rapport_jour(date_r, nom_client, contact_client, adresse_livraison, produit, prix_achat, prix_vente, quantite, benefice, agent_fact, acquisition)
-                  VALUE(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11)"
+        mQuery = "INSERT INTO rapport_jour(date_r, nom_client, contact_client, adresse_livraison, produit, prix_achat, prix_vente, quantite, benefice, agent_fact, acquisition, livrer_par)
+                  VALUE(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12)"
         mCmd = New MySqlCommand(mQuery, mConnexion)
         Try
             mCmd.Parameters.AddWithValue("@val1", rapport.getDate)
@@ -26,6 +26,7 @@ Public Class RapportManager
             mCmd.Parameters.AddWithValue("@val9", rapport.getBenefice)
             mCmd.Parameters.AddWithValue("@val10", rapport.getAgentFacteur)
             mCmd.Parameters.AddWithValue("@val11", rapport.getSource)
+            mCmd.Parameters.AddWithValue("@val12", rapport.getLivreur)
             mCmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox("Erreur d'insertion du rapport. Source: " & ex.ToString)
@@ -44,7 +45,7 @@ Public Class RapportManager
                     rapportList.Add(New Rapport(CInt(mReader.GetString("id")), CDate(mReader.GetString("date_r")), mReader.GetString("nom_client"),
                                                 mReader.GetString("contact_client"), mReader.GetString("adresse_livraison"), mReader.GetString("produit"),
                                                 CInt(mReader.GetString("prix_achat")), CInt(mReader.GetString("prix_vente")), CInt(mReader.GetString("quantite")),
-                                                CInt(mReader.GetString("benefice")), mReader.GetString("agent_fact"), mReader.GetString("acquisition")))
+                                                CInt(mReader.GetString("benefice")), mReader.GetString("agent_fact"), mReader.GetString("acquisition"), mReader.GetString("livrer_par")))
                 End While
             End If
         Catch ex As Exception

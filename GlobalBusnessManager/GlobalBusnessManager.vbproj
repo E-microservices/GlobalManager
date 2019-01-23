@@ -120,11 +120,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="impression_d\Impression.vb" />
     <Compile Include="impression_d\ImpressionModule1.vb" />
     <Compile Include="model\agentsrapp\Agent.vb" />
     <Compile Include="model\agentsrapp\AgentManager.vb" />
     <Compile Include="model\agentsrapp\AgentModule.vb" />
+    <Compile Include="model\Livreur\Livreur.vb" />
+    <Compile Include="model\Livreur\LivreurManager.vb" />
+    <Compile Include="model\Livreur\LivreurModule1.vb" />
     <Compile Include="model\rapport\RapportModule.vb" />
     <Compile Include="model\rapport\Rapport.vb" />
     <Compile Include="model\rapport\RapportManager.vb" />

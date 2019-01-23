@@ -26,7 +26,7 @@
                 For Each rapport As Rapport In rapportList
                     MainController.RAPPORT_LIST_VIEW.Rows.Add(rapport.getId, rapport.getDate, rapport.getClientName, rapport.getContact, rapport.getAdresseLivraison,
                                                               rapport.getProductName, rapport.getPrixAchat, rapport.getPrixVente, rapport.getQuantite,
-                                                              rapport.getBenefice, rapport.getAgentFacteur, rapport.getSource)
+                                                              rapport.getBenefice, rapport.getAgentFacteur, rapport.getSource, rapport.getLivreur)
                 Next
             Catch ex As Exception
                 MsgBox("Erreur lors de l'execution du programme. Source: " & ex.ToString)

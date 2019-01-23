@@ -13,8 +13,8 @@ Public Class BasicCommandManager
         mConnexion = connexion.getConnexion
     End Sub
     Public Sub addCommand(command As BasicCommand)
-        mQuery = ("INSERT INTO commande (code_produit, nom_produit, client_name, contact, adresse_livraison, prix_unitaire, quantite, net_payer, status, id_agent, date_command, acquisition)
-                    VALUE(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12)")
+        mQuery = ("INSERT INTO commande (code_produit, nom_produit, client_name, contact, adresse_livraison, prix_unitaire, quantite, net_payer, status, id_agent, date_command, acquisition, livreur)
+                    VALUE(@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13)")
         Try
             mCmd = New MySqlCommand(mQuery, mConnexion)
             mCmd.Parameters.AddWithValue("@val1", command.getPoduct.getCode)
@@ -29,6 +29,7 @@ Public Class BasicCommandManager
             mCmd.Parameters.AddWithValue("@val10", command.getAgent)
             mCmd.Parameters.AddWithValue("@val11", CDate(command.getDate).ToShortDateString)
             mCmd.Parameters.AddWithValue("@val12", command.getSource)
+            mCmd.Parameters.AddWithValue("@val13", command.getLivreur)
 
             mCmd.ExecuteNonQuery()
         Catch ex As Exception
@@ -132,7 +133,7 @@ Public Class BasicCommandManager
                                                           mReader.GetString("client_name"), mReader.GetString("contact"), mReader.GetString("adresse_livraison"),
                                                           mReader.GetString("prix_unitaire"), mReader.GetString("quantite"), mReader.GetString("net_payer"),
                                                           mReader.GetString("status"), mReader.GetString("id_agent"), mReader.GetString("date_command"),
-                                                          mReader.GetString("acquisition"))
+                                                          mReader.GetString("acquisition"), mReader.GetString("livreur"))
             End While
         Catch ex As Exception
             MsgBox("Erreur de commande. Source erreur: " & ex.ToString)
@@ -252,6 +253,15 @@ Public Class BasicCommandManager
         Dim forme As String
         Try
             forme = MainController.VU_COMMAND.CurrentRow.Cells().Item(12).Value
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return forme
+    End Function
+    Public Function getRowSelectedLivreurValue() As String
+        Dim forme As String
+        Try
+            forme = MainController.VU_COMMAND.CurrentRow.Cells().Item(13).Value
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

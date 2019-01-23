@@ -12,6 +12,7 @@
     Private mCommandStat As String
     Private mIdAgent As String
     Private mSource As String
+    Private mLivreur As String
 
 #Region "Constructor"
     Sub New()
@@ -25,6 +26,7 @@
         mCommandStat = commandStat
         mIdAgent = agent
         mSource = ""
+        mLivreur = ""
     End Sub
     Sub New(id As Integer, productList As Product, client As String, adressDeLivraison As String, netToPay As Integer, commandStat As String, agent As String)
         mId = id
@@ -35,6 +37,7 @@
         mCommandStat = commandStat
         mIdAgent = agent
         mSource = ""
+        mLivreur = ""
     End Sub
     Sub New(id As Integer, idate As Date, productList As Product, client As String, adressDeLivraison As String, netToPay As Integer, commandStat As String, agent As String)
         mId = id
@@ -46,6 +49,19 @@
         mCommandStat = commandStat
         mIdAgent = agent
         mSource = ""
+        mLivreur = ""
+    End Sub
+    Sub New(id As Integer, idate As Date, productList As Product, client As String, adressDeLivraison As String, netToPay As Integer, commandStat As String, agent As String, livreur As String)
+        mId = id
+        mDate = idate
+        mProductList = productList
+        mClientName = client
+        mAdresseDeLivraison = adressDeLivraison
+        mNetToPay = netToPay
+        mCommandStat = commandStat
+        mIdAgent = agent
+        mSource = ""
+        mLivreur = livreur
     End Sub
 #End Region
 
@@ -83,6 +99,9 @@
     Public Sub setSource(source As String)
         mSource = source
     End Sub
+    Public Sub setLivreur(livreur As String)
+        mLivreur = livreur
+    End Sub
 #End Region
 
 #Region "GETTER"
@@ -118,6 +137,9 @@
     End Function
     Public Function getSource() As String
         Return mSource
+    End Function
+    Public Function getLivreur() As String
+        Return mLivreur
     End Function
 #End Region
 End Class
